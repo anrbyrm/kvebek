@@ -1,0 +1,11 @@
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  errors:
+    unused_element: ignore
+    missing_return: error
+    must_be_immutable: error
+    missing_required_param: error
+    non_constant_identifier_names: ignore
+    sort_unnamed_constructors_first: ignore
+    prefer_if_elements_to_conditional_expressions: ignore
