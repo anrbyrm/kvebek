@@ -109,3 +109,4 @@ flutter:
   assets:
     - assets/
     - assets/json/users.json
+    - assets/images/splash_image.png
