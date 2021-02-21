@@ -5,8 +5,6 @@ import 'package:kvebek/injection.dart';
 
 import 'presentation/core/app.dart';
 
-const myTask = "syncWithTheBackEnd";
-
 // ignore: avoid_void_async
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
