@@ -13,49 +13,47 @@ class CustomDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(4),
       ),
-      child: SizedBox(
-        height: 210,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
               ),
             ),
-            const SizedBox(height: 5.0),
-            Padding(
-              padding: const EdgeInsets.all(7.0),
-              child: Text(
-                description,
-                style: TextStyle(
-                  color: Colors.grey[400],
-                  fontSize: 15.0,
-                ),
-                textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 5.0),
+          Padding(
+            padding: const EdgeInsets.all(7.0),
+            child: Text(
+              description,
+              style: TextStyle(
+                color: Colors.grey[400],
+                fontSize: 15.0,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const SizedBox(height: 5.0),
+          RaisedButton(
+            color: Colors.black,
+            textColor: Colors.white,
+            shape: const RoundedRectangleBorder(),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text(
+              'Tamam',
+              style: TextStyle(
+                fontSize: 15.0,
               ),
             ),
-            const SizedBox(height: 5.0),
-            RaisedButton(
-              color: Colors.black,
-              textColor: Colors.white,
-              shape: const RoundedRectangleBorder(),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text(
-                'Tamam',
-                style: TextStyle(
-                  fontSize: 15.0,
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
