@@ -35,7 +35,6 @@ class _$BoiDetailEventTearOff {
   }
 
 // ignore: unused_element
-  // ignore: avoid_positional_boolean_parameters
   _HaveCarChanged withCarChanged(bool check) {
     return _HaveCarChanged(
       check,
@@ -566,7 +565,6 @@ class __$HaveCarChangedCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_HaveCarChanged implements _HaveCarChanged {
-  // ignore: avoid_positional_boolean_parameters
   const _$_HaveCarChanged(this.check) : assert(check != null);
 
   @override
@@ -669,7 +667,6 @@ class _$_HaveCarChanged implements _HaveCarChanged {
 }
 
 abstract class _HaveCarChanged implements BoiDetailEvent {
-  // ignore: avoid_positional_boolean_parameters
   const factory _HaveCarChanged(bool check) = _$_HaveCarChanged;
 
   bool get check;

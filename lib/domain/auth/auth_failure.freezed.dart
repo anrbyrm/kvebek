@@ -19,6 +19,11 @@ class _$AuthFailureTearOff {
   }
 
 // ignore: unused_element
+  AccountIsNotWorking accountIsNotWorking() {
+    return const AccountIsNotWorking();
+  }
+
+// ignore: unused_element
   WrongNameOrPassword wrongNameOrPassword() {
     return const WrongNameOrPassword();
   }
@@ -33,22 +38,26 @@ mixin _$AuthFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult serverError(),
+    @required TResult accountIsNotWorking(),
     @required TResult wrongNameOrPassword(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
+    TResult accountIsNotWorking(),
     TResult wrongNameOrPassword(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
+    @required TResult accountIsNotWorking(AccountIsNotWorking value),
     @required TResult wrongNameOrPassword(WrongNameOrPassword value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
+    TResult accountIsNotWorking(AccountIsNotWorking value),
     TResult wrongNameOrPassword(WrongNameOrPassword value),
     @required TResult orElse(),
   });
@@ -109,9 +118,11 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult serverError(),
+    @required TResult accountIsNotWorking(),
     @required TResult wrongNameOrPassword(),
   }) {
     assert(serverError != null);
+    assert(accountIsNotWorking != null);
     assert(wrongNameOrPassword != null);
     return serverError();
   }
@@ -120,6 +131,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
+    TResult accountIsNotWorking(),
     TResult wrongNameOrPassword(),
     @required TResult orElse(),
   }) {
@@ -134,9 +146,11 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
+    @required TResult accountIsNotWorking(AccountIsNotWorking value),
     @required TResult wrongNameOrPassword(WrongNameOrPassword value),
   }) {
     assert(serverError != null);
+    assert(accountIsNotWorking != null);
     assert(wrongNameOrPassword != null);
     return serverError(this);
   }
@@ -145,6 +159,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
+    TResult accountIsNotWorking(AccountIsNotWorking value),
     TResult wrongNameOrPassword(WrongNameOrPassword value),
     @required TResult orElse(),
   }) {
@@ -158,6 +173,103 @@ class _$ServerError implements ServerError {
 
 abstract class ServerError implements AuthFailure {
   const factory ServerError() = _$ServerError;
+}
+
+/// @nodoc
+abstract class $AccountIsNotWorkingCopyWith<$Res> {
+  factory $AccountIsNotWorkingCopyWith(
+          AccountIsNotWorking value, $Res Function(AccountIsNotWorking) then) =
+      _$AccountIsNotWorkingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$AccountIsNotWorkingCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements $AccountIsNotWorkingCopyWith<$Res> {
+  _$AccountIsNotWorkingCopyWithImpl(
+      AccountIsNotWorking _value, $Res Function(AccountIsNotWorking) _then)
+      : super(_value, (v) => _then(v as AccountIsNotWorking));
+
+  @override
+  AccountIsNotWorking get _value => super._value as AccountIsNotWorking;
+}
+
+/// @nodoc
+class _$AccountIsNotWorking implements AccountIsNotWorking {
+  const _$AccountIsNotWorking();
+
+  @override
+  String toString() {
+    return 'AuthFailure.accountIsNotWorking()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is AccountIsNotWorking);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult serverError(),
+    @required TResult accountIsNotWorking(),
+    @required TResult wrongNameOrPassword(),
+  }) {
+    assert(serverError != null);
+    assert(accountIsNotWorking != null);
+    assert(wrongNameOrPassword != null);
+    return accountIsNotWorking();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult serverError(),
+    TResult accountIsNotWorking(),
+    TResult wrongNameOrPassword(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (accountIsNotWorking != null) {
+      return accountIsNotWorking();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult serverError(ServerError value),
+    @required TResult accountIsNotWorking(AccountIsNotWorking value),
+    @required TResult wrongNameOrPassword(WrongNameOrPassword value),
+  }) {
+    assert(serverError != null);
+    assert(accountIsNotWorking != null);
+    assert(wrongNameOrPassword != null);
+    return accountIsNotWorking(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult serverError(ServerError value),
+    TResult accountIsNotWorking(AccountIsNotWorking value),
+    TResult wrongNameOrPassword(WrongNameOrPassword value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (accountIsNotWorking != null) {
+      return accountIsNotWorking(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AccountIsNotWorking implements AuthFailure {
+  const factory AccountIsNotWorking() = _$AccountIsNotWorking;
 }
 
 /// @nodoc
@@ -200,9 +312,11 @@ class _$WrongNameOrPassword implements WrongNameOrPassword {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult serverError(),
+    @required TResult accountIsNotWorking(),
     @required TResult wrongNameOrPassword(),
   }) {
     assert(serverError != null);
+    assert(accountIsNotWorking != null);
     assert(wrongNameOrPassword != null);
     return wrongNameOrPassword();
   }
@@ -211,6 +325,7 @@ class _$WrongNameOrPassword implements WrongNameOrPassword {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
+    TResult accountIsNotWorking(),
     TResult wrongNameOrPassword(),
     @required TResult orElse(),
   }) {
@@ -225,9 +340,11 @@ class _$WrongNameOrPassword implements WrongNameOrPassword {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
+    @required TResult accountIsNotWorking(AccountIsNotWorking value),
     @required TResult wrongNameOrPassword(WrongNameOrPassword value),
   }) {
     assert(serverError != null);
+    assert(accountIsNotWorking != null);
     assert(wrongNameOrPassword != null);
     return wrongNameOrPassword(this);
   }
@@ -236,6 +353,7 @@ class _$WrongNameOrPassword implements WrongNameOrPassword {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
+    TResult accountIsNotWorking(AccountIsNotWorking value),
     TResult wrongNameOrPassword(WrongNameOrPassword value),
     @required TResult orElse(),
   }) {
