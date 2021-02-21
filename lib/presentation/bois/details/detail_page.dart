@@ -56,11 +56,13 @@ class DetailPage extends StatelessWidget {
                     ),
                     Stack(
                       children: <Widget>[
-                        const Align(
+                        Align(
                           alignment: Alignment.topLeft,
                           child: Padding(
-                              padding: EdgeInsets.only(left: 60, top: 50),
-                              child: Text('Hardadı')),
+                              padding: const EdgeInsets.only(left: 60, top: 50),
+                              child: willOrNot()
+                                  ? const Text('Hara düşür')
+                                  : const Text('Hardadı')),
                         ),
                         Align(
                           alignment: Alignment.topRight,
@@ -72,13 +74,20 @@ class DetailPage extends StatelessWidget {
                                     style: const TextStyle(
                                         fontStyle: FontStyle.italic),
                                   )
-                                : const Text(
-                                    'Götünü sikdirir',
-                                    style: TextStyle(
-                                        color: Colors.red,
-                                        fontSize: 12,
-                                        fontStyle: FontStyle.italic),
-                                  ),
+                                : willOrNot()
+                                    ? Text(
+                                        boi.placeName.getOrCrash(),
+                                        style: const TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    : const Text(
+                                        'Götünü sikdirir',
+                                        style: TextStyle(
+                                            color: Colors.red,
+                                            fontSize: 12,
+                                            fontStyle: FontStyle.italic),
+                                      ),
                           ),
                         ),
                       ],
@@ -95,7 +104,7 @@ class DetailPage extends StatelessWidget {
                           alignment: Alignment.topRight,
                           child: Padding(
                               padding:
-                                  const EdgeInsets.only(right: 60, top: 50),
+                                  const EdgeInsets.only(right: 50, top: 50),
                               child: willOrNot()
                                   ? Text(
                                       formatTimeOfDay(
@@ -106,7 +115,7 @@ class DetailPage extends StatelessWidget {
                                       ),
                                       style: const TextStyle(
                                           fontFamily: 'Roboto',
-                                          fontStyle: FontStyle.italic),
+                                          fontWeight: FontWeight.bold),
                                     )
                                   : const Text('-')),
                         ),
@@ -126,7 +135,7 @@ class DetailPage extends StatelessWidget {
                         Align(
                           alignment: Alignment.topRight,
                           child: Padding(
-                            padding: const EdgeInsets.only(right: 60, top: 50),
+                            padding: const EdgeInsets.only(right: 50, top: 50),
                             child: boi.haveCar
                                 ? outsideOrNot()
                                     ? (boi.withCar
