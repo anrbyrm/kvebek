@@ -21,14 +21,16 @@ class LogInBody extends StatelessWidget {
                   builder: (BuildContext context) {
                     return CustomDialog(
                       title: failure.map(
-                        serverError: (_) => 'Server xətası!',
+                        serverError: (_) => 'Server xətası',
                         wrongNameOrPassword: (_) => 'Ad ya da kod xətası',
+                        accountIsNotWorking: (_) => 'Hesab xətası',
                       ),
                       description: failure.map(
                         serverError: (_) =>
                             'Serverdə xəta oldu bratan. Yenidən yoxla.',
                         wrongNameOrPassword: (_) =>
                             'Adı ya da kodu səhv yazmısan. Dəyişib yenidən yoxla brat.',
+                        accountIsNotWorking: (_) => 'Hesab işləmir dosi.',
                       ),
                     );
                   }),
@@ -120,6 +122,7 @@ class LogInBody extends StatelessWidget {
                               cursorWidth: 1.0,
                               autocorrect: false,
                               key: const Key('login_passInput'),
+                              keyboardType: TextInputType.text,
                               obscureText: true,
                               onChanged: (value) => context
                                   .read<LogInBloc>()
