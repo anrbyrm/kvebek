@@ -14,16 +14,19 @@ class SplashPage extends StatelessWidget {
         state.map(
           initial: (_) {},
           authenticated: (_) =>
-              ExtendedNavigator.of(context).replace(Routes.boisOverviewPage),
+              Future.delayed(const Duration(milliseconds: 1500), () {
+            ExtendedNavigator.of(context).replace(Routes.boisOverviewPage);
+          }),
           unauthenticated: (_) =>
-              ExtendedNavigator.of(context).replace(Routes.logInPage),
+              Future.delayed(const Duration(milliseconds: 2000), () {
+            ExtendedNavigator.of(context).replace(Routes.logInPage);
+          }),
         );
       },
-      child: const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
-        ),
-      ),
+      child: Scaffold(
+          body: Center(
+        child: Image.asset('assets/images/splash_image.png'),
+      )),
     );
   }
 }
