@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:kvebek/presentation/routes/routes.gr.dart';
@@ -78,7 +80,7 @@ class BoiCard extends StatelessWidget {
                     children: <Widget>[
                       outsideOrNot(boi)
                           ? Padding(
-                              padding: const EdgeInsets.only(top: 22, right: 5),
+                              padding: const EdgeInsets.only(top: 22),
                               child: Text(
                                 boi.placeName.getOrCrash(),
                                 style: const TextStyle(
@@ -86,7 +88,22 @@ class BoiCard extends StatelessWidget {
                                 textAlign: TextAlign.end,
                               ),
                             )
-                          : Container(),
+                          : boi.hachan.value != Boi.empty().hachan.value
+                              ? Padding(
+                                  padding: const EdgeInsets.only(top: 22),
+                                  child: Text(
+                                    DateFormat('HH:mm').format(
+                                        DateTime.fromMillisecondsSinceEpoch(
+                                            boi.hachan.value)),
+                                    style: const TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 11,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.end,
+                                  ),
+                                )
+                              : Container(),
                       outsideOrNot(boi)
                           ? const Padding(
                               padding: EdgeInsets.only(bottom: 9, right: 5),
