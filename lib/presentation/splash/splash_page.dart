@@ -25,7 +25,11 @@ class SplashPage extends StatelessWidget {
       },
       child: Scaffold(
           body: Center(
-        child: Image.asset('assets/images/splash_image.png'),
+        child: SizedBox(
+          width: 100,
+          height: 100,
+          child: Image.asset('assets/images/splash_image.png'),
+        ),
       )),
     );
   }
